@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience & Skills - Suraj Gattani</title>
+    <meta name="description" content="Detailed work experience and technical skills of Suraj Gattani, Senior ML Scientist with expertise in molecular discovery and AI.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .experience-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            text-align: center;
+        }
+        
+        .experience-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .experience-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .experience-timeline {
+            padding: 80px 0;
+            background: var(--background);
+        }
+        
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-color);
+        }
+        
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+            padding-left: 80px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 4px solid var(--background);
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+        
+        .timeline-content {
+            background: var(--background-alt);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 30px;
+            border-right: 15px solid var(--background-alt);
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .job-info h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-company {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .job-duration {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .job-achievements {
+            list-style: none;
+        }
+        
+        .job-achievements li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .job-achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .skills-section {
+            padding: 80px 0;
+            background: var(--background-alt);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .skill-category {
+            background: var(--background);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .skill-header h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .skill-tag {
+            background: var(--background-alt);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 500;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .achievements {
+            padding: 80px 0;
+            background: var(--background);
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .achievement-card {
+            background: var(--background-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .achievement-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .achievement-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .achievement-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .experience-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-item::before {
+                left: 8px;
+                width: 20px;
+                height: 20px;
+            }
+            
+            .timeline-content::before {
+                left: -10px;
+                border-right-width: 10px;
+                border-top-width: 10px;
+                border-bottom-width: 10px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: start;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Suraj Gattani</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="experience-hero">
+            <div class="container">
+                <h1>Experience & Skills</h1>
+                <p>
+                    A comprehensive overview of my professional journey, technical expertise, 
+                    and the impact I've made in machine learning and bioinformatics.
+                </p>
+            </div>
+        </section>
+
+        <section class="experience-timeline">
+            <div class="container">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="job-header">
+                                <div class="job-info">
+                                    <h3>Senior Scientist II, ML</h3>
+                                    <div class="job-company">Schrodinger, Los Angeles, CA</div>
+                                </div>
+                                <div class="job-duration">June 2022 - Present</div>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Architected novel unified graph-text ML model achieving state-of-the-art molecular property predictions across 2M+ molecules, matching or exceeding specialized single-property models</li>
+                                <li>Led platform development for LiveDesign Learning, architecting scalable Argo/Kubernetes ML pipelines generating $500K+ revenue while enabling automated training and real-time inference for pharma clients and 15 internal therapeutics projects</li>
+                                <li>Built and deployed LLM-based search tool achieving 85%+ accuracy for clinical trial alerts and internal document retrieval</li>
+                                <li>Led Material Science initiatives developing ML pipelines for formulation prediction and integrating multiple property prediction models into production</li>
+                                <li>Implemented Graph Neural Networks yielding 8-10% r-squared score improvements across molecular property predictions at scale</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="job-header">
+                                <div class="job-info">
+                                    <h3>Senior Scientist I, ML</h3>
+                                    <div class="job-company">Schrodinger, Los Angeles, CA</div>
+                                </div>
+                                <div class="job-duration">Oct 2021 - June 2022</div>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Developed smart ensemble methodology enhancing model performance by 6% through qualified data selection</li>
+                                <li>Enhanced ML dashboard capabilities with comprehensive backtesting features for MedChemists and Material Scientists</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="job-header">
+                                <div class="job-info">
+                                    <h3>Machine Learning Engineer</h3>
+                                    <div class="job-company">GV20 Therapeutics, Cambridge, MA</div>
+                                </div>
+                                <div class="job-duration">Oct 2019 - Oct 2020, Oct 2021 - June 2022</div>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Implemented deep learning model architecture for cancer type classification (MCC: 0.97), target gene expression (PCC: 0.67), and survival prediction (Cidx: 0.75)</li>
+                                <li>Applied Transfer Learning and Multitask Learning to improve the expressed target gene correlation by up to 40%</li>
+                                <li>Used AWS Sagemaker to train and optimize model parameters with hyperparameter optimization search</li>
+                                <li>Created a Python package containing various models from recent antibody-related research</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="job-header">
+                                <div class="job-info">
+                                    <h3>Research Engineer</h3>
+                                    <div class="job-company">Machine Learning and Bioinformatics Laboratory, University of New Orleans</div>
+                                </div>
+                                <div class="job-duration">July 2019 - Oct 2019</div>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Data preprocessing to analyze risks and mishaps and build a forecasting model with 97% accuracy</li>
+                                <li>Developed a tagging-based system (94%) to forecast risks according to location and type</li>
+                                <li>Created a software plugin to automate risk forecasting and model update with new data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Machine Learning & AI</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">Graph Neural Networks</span>
+                            <span class="skill-tag">Transfer Learning</span>
+                            <span class="skill-tag">Ensemble Methods</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">Natural Language Processing</span>
+                            <span class="skill-tag">Large Language Models</span>
+                            <span class="skill-tag">Generative AI</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Programming & Frameworks</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">CUDA</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3>Cloud & Infrastructure</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Google Cloud</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Argo</span>
+                            <span class="skill-tag">Knative</span>
+                            <span class="skill-tag">Helm</span>
+                            <span class="skill-tag">Vector Database</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h3>Bioinformatics & Molecular</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Molecular Property Prediction</span>
+                            <span class="skill-tag">Protein Analysis</span>
+                            <span class="skill-tag">Drug Discovery</span>
+                            <span class="skill-tag">Molecular Simulations</span>
+                            <span class="skill-tag">Cheminformatics</span>
+                            <span class="skill-tag">Material Science</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Development & Tools</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Agile Development</span>
+                            <span class="skill-tag">SCRUM</span>
+                            <span class="skill-tag">MLOps</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Algorithm Design</span>
+                            <span class="skill-tag">Streamlit</span>
+                            <span class="skill-tag">Model Deployment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <div class="container">
+                <h2 class="section-title">Key Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Revenue Generation</h3>
+                        <p>Led development of ML platform generating $500K+ revenue for pharma clients through automated training and real-time inference capabilities</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Robotics Excellence</h3>
+                        <p>1st Place - Sinhgad Institutes Sociobotics 2016, 2nd Place - VJTI Robotics 2015, demonstrating early technical leadership</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Model Performance</h3>
+                        <p>Achieved 8-10% r-squared score improvements in molecular property predictions and 85%+ accuracy in LLM-based search systems</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Academic Recognition</h3>
+                        <p>Recipient of Privateer Graduate Award and Research Assistantship at University of New Orleans</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Team Leadership</h3>
+                        <p>Successfully led 15+ internal therapeutics projects and enabled automated ML solutions for multiple pharma clients</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Research Impact</h3>
+                        <p>Published multiple papers in protein binding prediction and molecular simulations, contributing to scientific advancement</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Suraj Gattani</h3>
+                    <p>Senior ML Scientist specializing in molecular discovery and AI applications</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:surajgattani.g@gmail.com" class="footer-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suraj Gattani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

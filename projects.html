@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Portfolio - Suraj Gattani</title>
+    <meta name="description" content="Explore Suraj Gattani's project portfolio including ML platforms, generative AI applications, and bioinformatics research.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .projects-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            text-align: center;
+        }
+        
+        .projects-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .projects-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--background);
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-tab.active,
+        .filter-tab:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .projects-section {
+            padding: 80px 0;
+            background: var(--background);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+        
+        .project-card {
+            background: var(--background-alt);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .project-header {
+            padding: 2rem 2rem 1rem;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.375rem 1rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-metrics {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .metric {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        .project-tech {
+            padding: 0 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: var(--background);
+            color: var(--text-primary);
+            padding: 0.375rem 0.875rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+        
+        .project-footer {
+            padding: 0 2rem 2rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .project-link.secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .project-link.secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .featured-project {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: var(--gradient);
+            color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .featured-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .featured-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .featured-stat {
+            text-align: center;
+        }
+        
+        .featured-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .featured-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .featured-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .featured-tech-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .featured-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        
+        .featured-visual i {
+            font-size: 8rem;
+            opacity: 0.7;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .projects-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-project {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+            
+            .featured-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .project-metrics {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Suraj Gattani</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="projects-hero">
+            <div class="container">
+                <h1>Projects Portfolio</h1>
+                <p>
+                    Explore my work in machine learning, bioinformatics, and AI applications 
+                    that have generated significant impact and revenue.
+                </p>
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All Projects</button>
+                    <button class="filter-tab" data-filter="professional">Professional</button>
+                    <button class="filter-tab" data-filter="ai">Generative AI</button>
+                    <button class="filter-tab" data-filter="research">Research</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <div class="projects-grid">
+                    <!-- Featured Project -->
+                    <div class="featured-project" data-category="professional">
+                        <div class="featured-content">
+                            <h3>LiveDesign Learning Platform</h3>
+                            <p>
+                                Architected and led the development of a comprehensive ML platform that revolutionized 
+                                how pharmaceutical companies approach molecular discovery. This scalable Kubernetes-based 
+                                system enables automated training and real-time inference, serving 15+ internal projects 
+                                and multiple external pharma clients.
+                            </p>
+                            <div class="featured-stats">
+                                <div class="featured-stat">
+                                    <span class="featured-stat-value">$500K+</span>
+                                    <span class="featured-stat-label">Revenue Generated</span>
+                                </div>
+                                <div class="featured-stat">
+                                    <span class="featured-stat-value">15+</span>
+                                    <span class="featured-stat-label">Projects Supported</span>
+                                </div>
+                                <div class="featured-stat">
+                                    <span class="featured-stat-value">2M+</span>
+                                    <span class="featured-stat-label">Molecules Analyzed</span>
+                                </div>
+                            </div>
+                            <div class="featured-tech">
+                                <span class="featured-tech-tag">Kubernetes</span>
+                                <span class="featured-tech-tag">Argo Workflows</span>
+                                <span class="featured-tech-tag">PyTorch</span>
+                                <span class="featured-tech-tag">AWS</span>
+                                <span class="featured-tech-tag">Docker</span>
+                            </div>
+                        </div>
+                        <div class="featured-visual">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                    </div>
+
+                    <!-- Professional Projects -->
+                    <div class="project-card" data-category="professional">
+                        <div class="project-header">
+                            <span class="project-category">Professional</span>
+                            <h3 class="project-title">Unified Graph-Text ML Model</h3>
+                            <p class="project-description">
+                                Developed a state-of-the-art unified model that combines graph neural networks with 
+                                text processing to achieve molecular property predictions across 2M+ molecules, 
+                                matching or exceeding specialized single-property models.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">8-10%</span>
+                                    <span class="metric-label">R² Improvement</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">2M+</span>
+                                    <span class="metric-label">Molecules</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <div class="tech-stack">
+                                <span class="tech-tag">Graph Neural Networks</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Deep Learning</span>
+                                <span class="tech-tag">NLP</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="professional">
+                        <div class="project-header">
+                            <span class="project-category">Professional</span>
+                            <h3 class="project-title">LLM-based Clinical Search Tool</h3>
+                            <p class="project-description">
+                                Built and deployed an advanced search system using large language models for clinical 
+                                trial alerts and internal document retrieval, achieving industry-leading accuracy rates.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">85%+</span>
+                                    <span class="metric-label">Accuracy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <div class="tech-stack">
+                                <span class="tech-tag">Large Language Models</span>
+                                <span class="tech-tag">Vector Database</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">RAG</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="professional">
+                        <div class="project-header">
+                            <span class="project-category">Professional</span>
+                            <h3 class="project-title">Cancer Classification System</h3>
+                            <p class="project-description">
+                                Implemented comprehensive deep learning model architecture for cancer type classification, 
+                                target gene expression prediction, and survival prediction with high accuracy metrics.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">0.97</span>
+                                    <span class="metric-label">MCC Score</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">40%</span>
+                                    <span class="metric-label">Improvement</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <div class="tech-stack">
+                                <span class="tech-tag">Deep Learning</span>
+                                <span class="tech-tag">Transfer Learning</span>
+                                <span class="tech-tag">AWS Sagemaker</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Generative AI Projects -->
+                    <div class="project-card" data-category="ai">
+                        <div class="project-header">
+                            <span class="project-category">Generative AI</span>
+                            <h3 class="project-title">Multilingual Conversational Agent</h3>
+                            <p class="project-description">
+                                Built an end-to-end multilingual conversational system using large language models 
+                                and WhatsApp integration for government services, supporting 8 languages with 
+                                context-aware knowledge retrieval.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">95%</span>
+                                    <span class="metric-label">Accuracy</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">8</span>
+                                    <span class="metric-label">Languages</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <div class="tech-stack">
+                                <span class="tech-tag">Large Language Models</span>
+                                <span class="tech-tag">WhatsApp API</span>
+                                <span class="tech-tag">ASR/TTS</span>
+                                <span class="tech-tag">Multi-language NLP</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="ai">
+                        <div class="project-header">
+                            <span class="project-category">Generative AI</span>
+                            <h3 class="project-title">E-Commerce AI Agent</h3>
+                            <p class="project-description">
+                                Architected a hybrid search system for e-commerce product recommendation and search, 
+                                implementing LLM reasoning engine to dramatically reduce irrelevant recommendations 
+                                while handling high-volume queries.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">40%</span>
+                                    <span class="metric-label">Accuracy Gain</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">65%</span>
+                                    <span class="metric-label">Reduction in Irrelevant</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">100K</span>
+                                    <span class="metric-label">Queries/min</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <div class="tech-stack">
+                                <span class="tech-tag">LLM Reasoning</span>
+                                <span class="tech-tag">Hybrid Search</span>
+                                <span class="tech-tag">Vector Database</span>
+                                <span class="tech-tag">Scalable Architecture</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Projects -->
+                    <div class="project-card" data-category="research">
+                        <div class="project-header">
+                            <span class="project-category">Research</span>
+                            <h3 class="project-title">NASA Patent Classifier Tool</h3>
+                            <p class="project-description">
+                                Applied machine learning to classify patents and software into 15 categories each. 
+                                Implemented advanced filtering and vectorization techniques to create an SVM-based 
+                                classifier with significant runtime improvements.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">15</span>
+                                    <span class="metric-label">Categories</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">1-2s</span>
+                                    <span class="metric-label">Runtime</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <div class="tech-stack">
+                                <span class="tech-tag">SVM</span>
+                                <span class="tech-tag">Word2Vec</span>
+                                <span class="tech-tag">GloVe</span>
+                                <span class="tech-tag">Text Classification</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="research">
+                        <div class="project-header">
+                            <span class="project-category">Research</span>
+                            <h3 class="project-title">NASA Risk Forecasting System</h3>
+                            <p class="project-description">
+                                Implemented deep learning models to analyze text data and forecast risks and mishaps 
+                                at NASA Stennis Space Center. Created automated software plugin for testing, 
+                                reporting, and further investigations.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">97%</span>
+                                    <span class="metric-label">Forecasting Accuracy</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">94%</span>
+                                    <span class="metric-label">Tagging Accuracy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <div class="tech-stack">
+                                <span class="tech-tag">Deep Learning</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">Risk Analysis</span>
+                                <span class="tech-tag">Data Mining</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="research">
+                        <div class="project-header">
+                            <span class="project-category">Research</span>
+                            <h3 class="project-title">StackCBPred - Protein Binding Prediction</h3>
+                            <p class="project-description">
+                                Developed a balanced predictor using stacking-based approach for protein-carbohydrate 
+                                binding sites prediction from sequence. Utilized features extracted from evolution-driven 
+                                sequence profile and predicted structural properties.
+                            </p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">86%</span>
+                                    <span class="metric-label">Accuracy</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">86.1%</span>
+                                    <span class="metric-label">Sensitivity</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <div class="tech-stack">
+                                <span class="tech-tag">Stacking Ensemble</span>
+                                <span class="tech-tag">Bioinformatics</span>
+                                <span class="tech-tag">Protein Analysis</span>
+                                <span class="tech-tag">Machine Learning</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Details
+                                </a>
+                                <a href="#" class="project-link secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Publication
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Suraj Gattani</h3>
+                    <p>Senior ML Scientist specializing in molecular discovery and AI applications</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:surajgattani.g@gmail.com" class="footer-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suraj Gattani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const projectCards = document.querySelectorAll('.project-card, .featured-project');
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active tab
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

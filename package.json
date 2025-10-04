@@ -1,0 +1,20 @@
+{
+  "name": "suraj-gattani-portfolio",
+  "version": "1.0.0",
+  "description": "Personal website and portfolio for Suraj Gattani - Senior ML Scientist",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "machine-learning",
+    "bioinformatics",
+    "personal-website"
+  ],
+  "author": "Suraj Gattani",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

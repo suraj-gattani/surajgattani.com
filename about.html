@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Suraj Gattani</title>
+    <meta name="description" content="Learn about Suraj Gattani's journey from Electronics Engineering to becoming a Senior ML Scientist specializing in molecular discovery and AI applications.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .about-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .about-image {
+            text-align: center;
+        }
+        
+        .about-photo {
+            width: 300px;
+            height: 300px;
+            background: var(--background-alt);
+            border: 2px dashed var(--border-color);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            margin: 0 auto 2rem;
+        }
+        
+        .about-photo i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            width: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .about-text h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        
+        .journey {
+            padding: 80px 0;
+            background: var(--background);
+        }
+        
+        .journey-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+        
+        .journey-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .journey-item:nth-child(odd) .journey-content {
+            margin-right: 55%;
+            text-align: right;
+        }
+        
+        .journey-item:nth-child(even) .journey-content {
+            margin-left: 55%;
+            text-align: left;
+        }
+        
+        .journey-content {
+            background: var(--background-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .journey-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .journey-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .journey-company {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .journey-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .journey-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .interests {
+            padding: 80px 0;
+            background: var(--background-alt);
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .interest-card {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .interest-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-text h1 {
+                font-size: 2rem;
+            }
+            
+            .journey-timeline::before {
+                left: 30px;
+            }
+            
+            .journey-item:nth-child(odd) .journey-content,
+            .journey-item:nth-child(even) .journey-content {
+                margin-left: 60px;
+                margin-right: 0;
+                text-align: left;
+            }
+            
+            .journey-item::before {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Suraj Gattani</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="about-photo">
+                            <i class="fas fa-user-circle"></i>
+                            <p>Professional Photo</p>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Contact Information</h3>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>surajgattani.g@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 (504) 434-9462</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Los Angeles, CA</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <a href="https://linkedin.com/in/surajgattani" target="_blank">LinkedIn</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <a href="https://github.com/surajgattani" target="_blank">GitHub</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-download"></i>
+                                <a href="assets/Resume_Suraj_Gattani.pdf" target="_blank">Download Resume</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h1>About Suraj Gattani</h1>
+                        <p>
+                            I'm a Senior ML Scientist at Schrodinger with a passion for applying cutting-edge machine learning 
+                            techniques to solve complex problems in molecular discovery and drug development. My journey from 
+                            Electronics Engineering to the forefront of AI and bioinformatics has been driven by a constant 
+                            curiosity about how technology can accelerate scientific breakthroughs.
+                        </p>
+                        
+                        <h2>My Mission</h2>
+                        <p>
+                            I believe in the transformative power of artificial intelligence to revolutionize how we understand 
+                            and manipulate molecular structures. My work focuses on developing state-of-the-art machine learning 
+                            models that can predict molecular properties with unprecedented accuracy, ultimately accelerating 
+                            the discovery of new drugs and materials.
+                        </p>
+                        
+                        <h2>Technical Philosophy</h2>
+                        <p>
+                            I approach every problem with a combination of deep technical expertise and practical business acumen. 
+                            Whether it's architecting scalable ML pipelines that generate significant revenue or developing novel 
+                            graph neural networks that push the boundaries of molecular property prediction, I focus on creating 
+                            solutions that are both scientifically rigorous and commercially viable.
+                        </p>
+                        
+                        <h2>Beyond Work</h2>
+                        <p>
+                            When I'm not developing ML models, you can find me exploring the latest advances in generative AI, 
+                            contributing to open-source projects, or mentoring the next generation of data scientists. I'm also 
+                            passionate about making AI more accessible and understandable through technical writing and speaking 
+                            engagements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="journey">
+            <div class="container">
+                <h2 class="section-title">My Journey</h2>
+                <div class="journey-timeline">
+                    <div class="journey-item">
+                        <div class="journey-content">
+                            <div class="journey-date">June 2022 - Present</div>
+                            <div class="journey-title">Senior Scientist II, ML</div>
+                            <div class="journey-company">Schrodinger, Los Angeles</div>
+                            <div class="journey-description">
+                                Leading ML initiatives for molecular discovery, architecting state-of-the-art models 
+                                for 2M+ molecules, and developing scalable ML infrastructure generating $500K+ revenue.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-item">
+                        <div class="journey-content">
+                            <div class="journey-date">Oct 2021 - June 2022</div>
+                            <div class="journey-title">Machine Learning Engineer</div>
+                            <div class="journey-company">GV20 Therapeutics, Cambridge</div>
+                            <div class="journey-description">
+                                Implemented deep learning architectures for cancer classification and survival prediction, 
+                                achieving significant improvements through transfer learning and multitask learning approaches.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-item">
+                        <div class="journey-content">
+                            <div class="journey-date">Aug 2017 - May 2019</div>
+                            <div class="journey-title">Master of Science, Computer Science</div>
+                            <div class="journey-company">University of New Orleans</div>
+                            <div class="journey-description">
+                                Specialized in machine learning, deep learning, and bioinformatics. Developed expertise 
+                                in computer vision, NLP, and agile development methodologies.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-item">
+                        <div class="journey-content">
+                            <div class="journey-date">Aug 2013 - May 2017</div>
+                            <div class="journey-title">Bachelor of Engineering</div>
+                            <div class="journey-company">Savitribai Phule Pune University, India</div>
+                            <div class="journey-description">
+                                Electronics and Telecommunication Engineering. Built foundation in engineering principles, 
+                                mathematics, and problem-solving that would later prove invaluable in machine learning.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="interests">
+            <div class="container">
+                <h2 class="section-title">Interests & Passions</h2>
+                <div class="interests-grid">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Robotics</h3>
+                        <p>Winner of multiple robotics competitions, including 1st place at Sinhgad Institutes Sociobotics 2016</p>
+                    </div>
+                    
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Research</h3>
+                        <p>Continuously exploring the latest developments in artificial intelligence and machine learning</p>
+                    </div>
+                    
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Scientific Computing</h3>
+                        <p>Passionate about using computational methods to solve complex scientific problems</p>
+                    </div>
+                    
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Mentoring</h3>
+                        <p>Dedicated to sharing knowledge and mentoring the next generation of data scientists</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Suraj Gattani</h3>
+                    <p>Senior ML Scientist specializing in molecular discovery and AI applications</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:surajgattani.g@gmail.com" class="footer-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suraj Gattani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

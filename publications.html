@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications & Research - Suraj Gattani</title>
+    <meta name="description" content="Academic publications and research contributions by Suraj Gattani in machine learning, bioinformatics, and molecular discovery.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .publications-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            text-align: center;
+        }
+        
+        .publications-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .publications-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .research-stats {
+            padding: 60px 0;
+            background: var(--background);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            background: var(--background-alt);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .publications-section {
+            padding: 80px 0;
+            background: var(--background-alt);
+        }
+        
+        .publication-card {
+            background: var(--background);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .publication-type {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.375rem 1rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .publication-status {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.375rem 1rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .publication-status.published {
+            background: #10b981;
+        }
+        
+        .publication-status.in-review {
+            background: #f59e0b;
+        }
+        
+        .publication-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .publication-authors {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .publication-abstract {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .publication-details {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .detail-item i {
+            color: var(--primary-color);
+        }
+        
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .pub-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .pub-link.secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .pub-link.secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .research-areas {
+            padding: 80px 0;
+            background: var(--background);
+        }
+        
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .area-card {
+            background: var(--background-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .area-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .area-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .area-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .area-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .area-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .certifications {
+            padding: 80px 0;
+            background: var(--background-alt);
+        }
+        
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .cert-card {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cert-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .cert-provider {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cert-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .publications-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .publication-header {
+                flex-direction: column;
+                align-items: start;
+            }
+            
+            .publication-details {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .publication-links {
+                flex-direction: column;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Suraj Gattani</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="publications-hero">
+            <div class="container">
+                <h1>Publications & Research</h1>
+                <p>
+                    Academic contributions to the fields of machine learning, bioinformatics, 
+                    and computational biology with focus on molecular discovery and protein analysis.
+                </p>
+            </div>
+        </section>
+
+        <section class="research-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label">Published Papers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Paper In Review</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Research Areas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="publications-section">
+            <div class="container">
+                <h2 class="section-title">Recent Publications</h2>
+                
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <span class="publication-type">Journal Article</span>
+                        <span class="publication-status in-review">In Review</span>
+                    </div>
+                    <h3 class="publication-title">
+                        Leveraging High-throughput Molecular Simulations and Machine Learning for Formulation Design
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Suraj Gattani</strong>, et al.
+                    </p>
+                    <p class="publication-abstract">
+                        This work presents a novel approach to formulation design by combining high-throughput molecular 
+                        simulations with advanced machine learning techniques. We demonstrate how computational methods 
+                        can accelerate the discovery and optimization of molecular formulations, reducing the time and 
+                        cost associated with traditional experimental approaches.
+                    </p>
+                    <div class="publication-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-flask"></i>
+                            <span>Material Science</span>
+                        </div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="#" class="pub-link secondary">
+                            <i class="fas fa-file-alt"></i>
+                            Preprint
+                        </a>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <span class="publication-type">Journal Article</span>
+                        <span class="publication-status published">Published</span>
+                    </div>
+                    <h3 class="publication-title">
+                        StackCBPred: A Stacking based Prediction of Protein-Carbohydrate Binding Sites from Sequence
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Suraj Gattani</strong>, Md Wasi Ul Kabir, Dukka B. KC
+                    </p>
+                    <p class="publication-abstract">
+                        We present StackCBPred, a balanced predictor using stacking-based approach with accuracy and 
+                        sensitivity of 86% and 86.1% respectively. The method utilizes features extracted from 
+                        evolution-driven sequence profile and several predicted structural properties of residues to 
+                        predict protein-carbohydrate binding sites from sequence data.
+                    </p>
+                    <div class="publication-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2019</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-dna"></i>
+                            <span>Bioinformatics</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>86% Accuracy</span>
+                        </div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="#" class="pub-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Paper
+                        </a>
+                        <a href="#" class="pub-link secondary">
+                            <i class="fas fa-code"></i>
+                            Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <span class="publication-type">Journal Article</span>
+                        <span class="publication-status published">Published</span>
+                    </div>
+                    <h3 class="publication-title">
+                        IGSF8 is a Natural Killer Cell Checkpoint and Cancer Immunotherapy Target
+                    </h3>
+                    <p class="publication-authors">
+                        Multiple Authors including <strong>Suraj Gattani</strong>
+                    </p>
+                    <p class="publication-abstract">
+                        This study identifies IGSF8 as a novel natural killer cell checkpoint and potential target for 
+                        cancer immunotherapy. Our machine learning analysis contributed to understanding the molecular 
+                        mechanisms underlying NK cell regulation and therapeutic applications.
+                    </p>
+                    <div class="publication-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2022</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-microscope"></i>
+                            <span>Cancer Research</span>
+                        </div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="#" class="pub-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Paper
+                        </a>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <span class="publication-type">Conference Paper</span>
+                        <span class="publication-status published">Published</span>
+                    </div>
+                    <h3 class="publication-title">
+                        Machine Learning based Prediction of Protein-Peptide Binding Sites from sequences
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Suraj Gattani</strong>, Dukka B. KC
+                    </p>
+                    <p class="publication-abstract">
+                        This work presents machine learning approaches for predicting protein-peptide binding sites 
+                        directly from sequence information. We developed computational methods that can identify 
+                        potential binding regions without requiring 3D structural information.
+                    </p>
+                    <div class="publication-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2019</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-dna"></i>
+                            <span>Protein Analysis</span>
+                        </div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="#" class="pub-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Paper
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="research-areas">
+            <div class="container">
+                <h2 class="section-title">Research Areas</h2>
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <div class="area-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <h3>Protein-Carbohydrate Interactions</h3>
+                        <p>
+                            Developing computational methods for predicting and analyzing protein-carbohydrate binding 
+                            sites using machine learning and sequence-based features.
+                        </p>
+                    </div>
+
+                    <div class="area-card">
+                        <div class="area-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3>Molecular Property Prediction</h3>
+                        <p>
+                            Using graph neural networks and deep learning to predict molecular properties for drug 
+                            discovery and material science applications.
+                        </p>
+                    </div>
+
+                    <div class="area-card">
+                        <div class="area-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Formulation Design</h3>
+                        <p>
+                            Leveraging high-throughput molecular simulations and machine learning for optimizing 
+                            molecular formulations in pharmaceutical applications.
+                        </p>
+                    </div>
+
+                    <div class="area-card">
+                        <div class="area-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h3>Cancer Immunotherapy</h3>
+                        <p>
+                            Applying machine learning to identify novel therapeutic targets and understand molecular 
+                            mechanisms in cancer immunotherapy.
+                        </p>
+                    </div>
+
+                    <div class="area-card">
+                        <div class="area-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Graph Neural Networks</h3>
+                        <p>
+                            Developing and implementing advanced GNN architectures for molecular representation 
+                            learning and property prediction tasks.
+                        </p>
+                    </div>
+
+                    <div class="area-card">
+                        <div class="area-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>AI-Powered Discovery</h3>
+                        <p>
+                            Creating intelligent systems for scientific literature search, clinical trial analysis, 
+                            and knowledge discovery in biomedical domains.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <div class="container">
+                <h2 class="section-title">Professional Certifications</h2>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <h3>Building LLM Applications from Scratch into Production</h3>
+                        <div class="cert-provider">Professional Certification</div>
+                        <p class="cert-description">
+                            Comprehensive training in developing and deploying large language model applications, 
+                            covering the full pipeline from development to production deployment.
+                        </p>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3>Building Better Generative Adversarial Networks (GANs)</h3>
+                        <div class="cert-provider">Deeplearning.ai</div>
+                        <p class="cert-description">
+                            Specialized course focusing on advanced GAN architectures, training techniques, 
+                            and applications in generative modeling.
+                        </p>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3>Natural Language Processing with Sequential and Probabilistic Models</h3>
+                        <div class="cert-provider">Deeplearning.ai</div>
+                        <p class="cert-description">
+                            Advanced NLP course covering sequential models, probabilistic approaches, and 
+                            modern techniques for natural language understanding.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Suraj Gattani</h3>
+                    <p>Senior ML Scientist specializing in molecular discovery and AI applications</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:surajgattani.g@gmail.com" class="footer-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suraj Gattani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

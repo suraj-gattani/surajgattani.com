@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Suraj Gattani</title>
+    <meta name="description" content="Get in touch with Suraj Gattani for collaborations, consulting, or speaking engagements in machine learning and bioinformatics.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            text-align: center;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .contact-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+            background: var(--background);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .contact-info {
+            background: var(--background-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .contact-info p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--background);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-text p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        .contact-text a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background: var(--background-alt);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-form h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: var(--background);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-submit {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+        
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .availability {
+            padding: 80px 0;
+            background: var(--background-alt);
+        }
+        
+        .availability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .availability-card {
+            background: var(--background);
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .availability-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .availability-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .availability-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .availability-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .availability-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .availability-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .availability-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-submit {
+                justify-content: center;
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Suraj Gattani</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Let's Connect</h1>
+                <p>
+                    I'm always interested in discussing new opportunities, collaborations, 
+                    and innovative applications of machine learning in bioinformatics and beyond.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        <p>
+                            Whether you're looking for collaboration on cutting-edge ML research, 
+                            consulting for your pharmaceutical AI initiatives, or speaking engagements 
+                            on molecular discovery and generative AI, I'd love to hear from you.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:surajgattani.g@gmail.com">surajgattani.g@gmail.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Phone</h3>
+                                    <p><a href="tel:+15044349462">+1 (504) 434-9462</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Location</h3>
+                                    <p>Los Angeles, California</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Response Time</h3>
+                                    <p>Usually within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://linkedin.com/in/surajgattani" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/surajgattani" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:surajgattani.g@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h2>Send Message</h2>
+                        <form id="contactForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="company">Company/Organization</label>
+                                    <input type="text" id="company" name="company">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="collaboration">Research Collaboration</option>
+                                    <option value="consulting">Consulting Services</option>
+                                    <option value="speaking">Speaking Engagement</option>
+                                    <option value="job">Job Opportunity</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required 
+                                    placeholder="Please describe your project, collaboration idea, or how I can help you..."></textarea>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="submit-btn" data-original-text="Send Message">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="availability">
+            <div class="container">
+                <h2 class="section-title">Available For</h2>
+                <div class="availability-grid">
+                    <div class="availability-card">
+                        <div class="availability-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Research Collaborations</h3>
+                        <p>
+                            Partnering on cutting-edge research in machine learning, bioinformatics, 
+                            and molecular discovery with academic institutions and industry partners.
+                        </p>
+                        <a href="mailto:surajgattani.g@gmail.com?subject=Research%20Collaboration" class="availability-btn">
+                            Collaborate
+                        </a>
+                    </div>
+                    
+                    <div class="availability-card">
+                        <div class="availability-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Consulting Services</h3>
+                        <p>
+                            Providing expert consultation on ML infrastructure, molecular property prediction, 
+                            and AI strategy for pharmaceutical and biotech companies.
+                        </p>
+                        <a href="mailto:surajgattani.g@gmail.com?subject=Consulting%20Services" class="availability-btn">
+                            Get Consultation
+                        </a>
+                    </div>
+                    
+                    <div class="availability-card">
+                        <div class="availability-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3>Speaking Engagements</h3>
+                        <p>
+                            Delivering talks on AI in drug discovery, graph neural networks, 
+                            and the future of computational biology at conferences and events.
+                        </p>
+                        <a href="mailto:surajgattani.g@gmail.com?subject=Speaking%20Engagement" class="availability-btn">
+                            Book Speaking
+                        </a>
+                    </div>
+                    
+                    <div class="availability-card">
+                        <div class="availability-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Mentoring</h3>
+                        <p>
+                            Mentoring early-career data scientists and researchers interested in 
+                            applying ML to scientific problems and bioinformatics.
+                        </p>
+                        <a href="mailto:surajgattani.g@gmail.com?subject=Mentoring" class="availability-btn">
+                            Request Mentoring
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Suraj Gattani</h3>
+                    <p>Senior ML Scientist specializing in molecular discovery and AI applications</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:surajgattani.g@gmail.com" class="footer-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/surajgattani" target="_blank" class="footer-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suraj Gattani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contact form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = form.querySelector('.submit-btn');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+                
+                // Validate required fields
+                const requiredFields = ['firstName', 'lastName', 'email', 'subject', 'message'];
+                const emptyFields = requiredFields.filter(field => !data[field].trim());
+                
+                if (emptyFields.length > 0) {
+                    showNotification('Please fill in all required fields.', 'error');
+                    return;
+                }
+                
+                // Validate email
+                if (!validateEmail(data.email)) {
+                    showNotification('Please enter a valid email address.', 'error');
+                    return;
+                }
+                
+                // Show loading state
+                setButtonLoading(submitBtn, true);
+                
+                // Simulate form submission (replace with actual form handling)
+                setTimeout(() => {
+                    // Create mailto link with form data
+                    const subject = encodeURIComponent(`${data.subject} - ${data.firstName} ${data.lastName}`);
+                    const body = encodeURIComponent(
+                        `Name: ${data.firstName} ${data.lastName}\n` +
+                        `Email: ${data.email}\n` +
+                        `Company: ${data.company || 'Not specified'}\n` +
+                        `Subject: ${data.subject}\n\n` +
+                        `Message:\n${data.message}`
+                    );
+                    
+                    const mailtoLink = `mailto:surajgattani.g@gmail.com?subject=${subject}&body=${body}`;
+                    window.location.href = mailtoLink;
+                    
+                    // Reset form and show success message
+                    form.reset();
+                    setButtonLoading(submitBtn, false);
+                    showNotification('Thank you for your message! Your email client should open now.', 'success');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
